@@ -1,14 +1,15 @@
 package com.library.library_app.Entity;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-@Entity
+@EntityScan
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +24,7 @@ public class Book {
     private String author;
 
     private boolean available;
+
     // Getters and Setters
     public Long getId() {
         return id;
