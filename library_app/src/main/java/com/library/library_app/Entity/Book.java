@@ -1,11 +1,28 @@
 package com.library.library_app.Entity;
 
-public class Book {
-    private Long id;
-    private String title;
-    private String author;
-    private boolean available;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+@Entity
+public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank
+    @Size(max = 100)
+    private String title;
+
+    @NotBlank
+    @Size(max = 100)
+    private String author;
+
+    private boolean available;
     // Getters and Setters
     public Long getId() {
         return id;
