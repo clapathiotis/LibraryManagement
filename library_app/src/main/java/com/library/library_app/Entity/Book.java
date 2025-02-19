@@ -1,28 +1,33 @@
 package com.library.library_app.Entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-@EntityScan
+/// Entity for the Book object
+/// Contains the unique identifier, title, author, and availability status of the book
+@Entity
 public class Book {
+
+    /// The unique identifier for the book
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /// The title of the book
     @NotBlank
     @Size(max = 100)
     private String title;
 
+    /// The author of the book
     @NotBlank
     @Size(max = 100)
     private String author;
 
+    /// The availability status of the book (borrowed or not)
     private boolean available;
 
     // Getters and Setters
