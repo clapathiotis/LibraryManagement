@@ -18,9 +18,10 @@ public class BookService {
     @Autowired
     public BookRepository bookRepository;
 
-    // Adds a book to the database
+    // Adds a book to the database and makes the book available
     public Book addBook(Book book) {
-            return bookRepository.save(book);
+        book.setAvailable(true);
+        return bookRepository.save(book);
     }
 
     // Returns a list of all books in the database
@@ -28,6 +29,7 @@ public class BookService {
         return bookRepository.findAll();
     }
 
+    // Removes a book from the database
     public void removeBook(Long id) {
         if (!bookRepository.existsById(id)) {
             throw new BookNotFoundException("Book not found with id: " + id);
@@ -35,22 +37,27 @@ public class BookService {
         bookRepository.deleteById(id);
     }
 
+    // Searches for books by title, author, or availability status
     public List<Book> findByTitleContaining(String title) {
         return bookRepository.findByTitleContaining(title);
     }
 
+    // Searches for books by author
     public List<Book> findByAuthorContaining(String author) {
         return bookRepository.findByAuthorContaining(author);
     }
 
+    // Searches for books by title and author
     public List<Book> findByTitleAndAuthorContaining(String title, String author) {
         return bookRepository.findByTitleAndAuthorContaining(title, author);
     }
 
+    // Searches for books by availability status
     public List<Book> findByAvailable(boolean available) {
         return bookRepository.findByAvailable(available);
     }
 
+    // Marks a book as borrowed
     public Book markAsBorrowed(Long id) {
         Book book = bookRepository.findById(id)
                 .orElseThrow(() -> new BookNotFoundException("Book not found with id: " + id));
@@ -58,6 +65,7 @@ public class BookService {
         return bookRepository.save(book);
     }
 
+    // Marks a book as returned
     public Book markAsReturned(Long id) {
         Book book = bookRepository.findById(id)
                 .orElseThrow(() -> new BookNotFoundException("Book not found with id: " + id));
