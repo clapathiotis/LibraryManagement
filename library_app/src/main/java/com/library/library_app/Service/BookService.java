@@ -38,7 +38,7 @@ public class BookService {
         return bookRepository.findByTitleAndAuthorContaining(title, author);
     }
 
-    public List<Book> findByAvailability(boolean available) {
+    public List<Book> findByAvailable(boolean available) {
         return bookRepository.findByAvailability(available);
     }
 

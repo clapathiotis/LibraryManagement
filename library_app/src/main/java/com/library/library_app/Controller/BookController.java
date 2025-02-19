@@ -45,9 +45,9 @@ public class BookController {
         return ResponseEntity.ok(books);
     }
 
-    @GetMapping("/search")
-    public ResponseEntity<List<Book>> searchByAvailability(@RequestParam boolean available) {
-        List<Book> books = bookService.findByAvailability(available);
+    @GetMapping("/search/available")
+    public ResponseEntity<List<Book>> searchByAvailable(@RequestParam boolean available) {
+        List<Book> books = bookService.findByAvailable(available);
         return ResponseEntity.ok(books);
     }
 
