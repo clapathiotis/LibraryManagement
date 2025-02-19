@@ -7,21 +7,27 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+/// Entity for the Book object
+/// Contains the unique identifier, title, author, and availability status of the book
 @Entity
 public class Book {
 
+    /// The unique identifier for the book
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /// The title of the book
     @NotBlank
     @Size(max = 100)
     private String title;
 
+    /// The author of the book
     @NotBlank
     @Size(max = 100)
     private String author;
 
+    /// The availability status of the book (borrowed or not)
     private boolean available;
 
     // Getters and Setters

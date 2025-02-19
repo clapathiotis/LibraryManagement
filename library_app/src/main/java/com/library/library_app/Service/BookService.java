@@ -9,14 +9,23 @@ import com.library.library_app.Entity.Book;
 import com.library.library_app.Exceptions.BookNotFoundException;
 import com.library.library_app.Repository.BookRepository;
 
+/// Service for the Book entity
+/// Contains methods to add, remove, search for, and update books
 @Service
 public class BookService {
 
+    // Automatically injects the BookRepository dependency
     @Autowired
     public BookRepository bookRepository;
 
+    // Adds a book to the database
     public Book addBook(Book book) {
-        return bookRepository.save(book);
+            return bookRepository.save(book);
+    }
+
+    // Returns a list of all books in the database
+    public List<Book> getAllBooks() {
+        return bookRepository.findAll();
     }
 
     public void removeBook(Long id) {
@@ -39,7 +48,7 @@ public class BookService {
     }
 
     public List<Book> findByAvailable(boolean available) {
-        return bookRepository.findByAvailability(available);
+        return bookRepository.findByAvailable(available);
     }
 
     public Book markAsBorrowed(Long id) {

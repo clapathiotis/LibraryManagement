@@ -51,6 +51,12 @@ public class BookController {
         return ResponseEntity.ok(books);
     }
 
+    @GetMapping
+    public ResponseEntity<List<Book>> getAllBooks() {
+        List<Book> books = bookService.getAllBooks();
+        return ResponseEntity.ok(books);
+    }
+
     @PutMapping("/{id}/borrow")
     public ResponseEntity<Book> markAsBorrowed(@PathVariable Long id) {
         Book book = bookService.markAsBorrowed(id);
