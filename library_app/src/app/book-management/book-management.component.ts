@@ -53,4 +53,26 @@ export class BookManagementComponent {
       this.books = data;
     });
   }
+
+  borrowBook(id: number) {
+    this.http.put(`http://localhost:8080/api/books/${id}/borrow`, {}).subscribe(() => {
+      this.books = this.books.map(book => {
+        if (book.id === id) {
+          book.available = false;
+        }
+        return book;
+      });
+    });
+  }
+
+  returnBook(id: number) {
+    this.http.put(`http://localhost:8080/api/books/${id}/return`, {}).subscribe(() => {
+      this.books = this.books.map(book => {
+        if (book.id === id) {
+          book.available = true;
+        }
+        return book;
+      });
+    });
+  }
 }
