@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AuthorSearchComponent } from './author-search/author-search.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [AuthorSearchComponent]
 })
 export class AppComponent {
-  title = 'library_app_angular';
+  title = 'Library Management System';
 }

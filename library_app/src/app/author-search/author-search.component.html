@@ -1,0 +1,10 @@
+<div>
+    <h2>Search Books by Author</h2>
+    <input type="text" [(ngModel)]="author" placeholder="Enter author name">
+    <button (click)="searchByAuthor()">Search</button>
+    <ul>
+      <li *ngFor="let book of books">
+        {{ book.title }} by {{ book.author }} - {{ book.available ? 'Available' : 'Borrowed' }}
+      </li>
+    </ul>
+  </div>
