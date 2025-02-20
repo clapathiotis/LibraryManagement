@@ -48,13 +48,6 @@ public class BookController {
         return ResponseEntity.ok(books);
     }
 
-    // Searches for books by title and author with GET request
-    @GetMapping("/search")
-    public ResponseEntity<List<Book>> searchByTitleAndAuthor(@RequestParam String title, @RequestParam String author) {
-        List<Book> books = bookService.findByTitleAndAuthorContaining(title, author);
-        return ResponseEntity.ok(books);
-    }
-
     // Searches for books by availability status with GET request
     @GetMapping("/search/available")
     public ResponseEntity<List<Book>> searchByAvailable(@RequestParam boolean available) {

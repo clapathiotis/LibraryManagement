@@ -47,11 +47,6 @@ public class BookService {
         return bookRepository.findByAuthorContaining(author);
     }
 
-    // Searches for books by title and author
-    public List<Book> findByTitleAndAuthorContaining(String title, String author) {
-        return bookRepository.findByTitleAndAuthorContaining(title, author);
-    }
-
     // Searches for books by availability status
     public List<Book> findByAvailable(boolean available) {
         return bookRepository.findByAvailable(available);
