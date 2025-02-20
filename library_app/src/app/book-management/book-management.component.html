@@ -1,0 +1,18 @@
+<div class="management-container">
+  <h2>Add or Delete books from the system</h2>
+
+  <h3>Add New Book</h3>
+  <input type="text" [(ngModel)]="newBook.title" placeholder="Enter book title" class="wide-input">
+  <input type="text" [(ngModel)]="newBook.author" placeholder="Enter author name" class="wide-input">
+  <label>
+    <input type="checkbox" [(ngModel)]="newBook.available"> Available
+  </label>
+  <button (click)="addBook()" class="wide-button">Add Book</button>
+
+  <ul>
+    <li *ngFor="let book of books">
+      {{ book.title }} by {{ book.author }} - {{ book.available ? 'Available' : 'Borrowed' }}
+      <button (click)="deleteBook(book.id)" class="delete-button">Delete</button>
+    </li>
+  </ul>
+</div>

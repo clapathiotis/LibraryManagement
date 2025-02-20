@@ -10,7 +10,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
   standalone: true,
   imports: [CommonModule, FormsModule, HttpClientModule]
 })
-export class AuthorSearchComponent {
+export class SearchComponent {
   searchType: string = 'author';
   author: string = '';
   title: string = '';
