@@ -13,6 +13,10 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 export class BookManagementComponent {
   books: any[] = [];
   newBook: any = { title: '', author: '', available: true };
+  searchType: string = 'author';
+  author: string = '';
+  title: string = '';
+  available: boolean = true;
 
   constructor(private http: HttpClient) {}
 
@@ -31,6 +35,21 @@ export class BookManagementComponent {
 
   listAllBooks() {
     this.http.get<any[]>('http://localhost:8080/api/books').subscribe(data => {
+      this.books = data;
+    });
+  }
+
+  searchBooks() {
+    let url = '';
+    if (this.searchType === 'author') {
+      url = `http://localhost:8080/api/books/search/author?author=${this.author}`;
+    } else if (this.searchType === 'title') {
+      url = `http://localhost:8080/api/books/search/title?title=${this.title}`;
+    } else if (this.searchType === 'available') {
+      url = `http://localhost:8080/api/books/search/available?available=${this.available}`;
+    }
+
+    this.http.get<any[]>(url).subscribe(data => {
       this.books = data;
     });
   }
