@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { AuthorSearchComponent } from './author-search/author-search.component';
+import { AuthorSearchComponent } from './search_component/search.component';
 
 @NgModule({
   declarations: [

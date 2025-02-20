@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { AuthorSearchComponent } from './author-search.component';
+import { AuthorSearchComponent } from './search.component';
 import { FormsModule } from '@angular/forms';
 
 describe('AuthorSearchComponent', () => {
