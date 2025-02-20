@@ -33,10 +33,4 @@ export class SearchComponent {
       this.books = data;
     });
   }
-
-  listAllBooks() {
-    this.http.get<any[]>('http://localhost:8080/api/books').subscribe(data => {
-      this.books = data;
-    });
-  }
 }

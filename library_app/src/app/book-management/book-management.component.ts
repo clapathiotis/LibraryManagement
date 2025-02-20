@@ -28,4 +28,10 @@ export class BookManagementComponent {
       this.books = this.books.filter(book => book.id !== id);
     });
   }
+
+  listAllBooks() {
+    this.http.get<any[]>('http://localhost:8080/api/books').subscribe(data => {
+      this.books = data;
+    });
+  }
 }

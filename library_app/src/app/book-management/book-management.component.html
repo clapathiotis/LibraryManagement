@@ -1,18 +1,29 @@
 <div class="management-container">
-  <h2>Add or Delete books from the system</h2>
+    <div class="flex-container">
+      <div class="column">
+        <h2>Add or Delete Books from the System</h2>
+  
+        <h3>Add New Book</h3>
+        <input type="text" [(ngModel)]="newBook.title" placeholder="Enter book title" class="wide-input">
+        <input type="text" [(ngModel)]="newBook.author" placeholder="Enter author name" class="wide-input">
+        <button (click)="addBook()" class="wide-button">Add Book</button>
 
-  <h3>Add New Book</h3>
-  <input type="text" [(ngModel)]="newBook.title" placeholder="Enter book title" class="wide-input">
-  <input type="text" [(ngModel)]="newBook.author" placeholder="Enter author name" class="wide-input">
-  <label>
-    <input type="checkbox" [(ngModel)]="newBook.available"> Available
-  </label>
-  <button (click)="addBook()" class="wide-button">Add Book</button>
+      </div>
+  
+      <div class="column">
+        <h2>Search</h2>
+        <button (click)="listAllBooks()" class="wide-button">List All Books</button>
+      </div>
 
-  <ul>
-    <li *ngFor="let book of books">
-      {{ book.title }} by {{ book.author }} - {{ book.available ? 'Available' : 'Borrowed' }}
-      <button (click)="deleteBook(book.id)" class="delete-button">Delete</button>
-    </li>
-  </ul>
-</div>
+      <div class="column">
+        <h2>Books in Storage</h2>
+        <ul>
+        <li *ngFor="let book of books">
+          {{ book.title }} by {{ book.author }} - {{ book.available ? 'Available' : 'Borrowed' }}
+          <button (click)="deleteBook(book.id)" class="delete-button">Delete</button>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>

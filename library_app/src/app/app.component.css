@@ -1,8 +1,13 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    justify-content: center; 
-    align-items: center;
-}
+    padding: 20px;
+  }
   
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .flex-container > * {
+    flex: 1;
+    margin: 10px;
+  }
