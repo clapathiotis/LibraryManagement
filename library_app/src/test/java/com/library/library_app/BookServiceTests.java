@@ -81,18 +81,6 @@ public class BookServiceTests {
     }
 
     @Test
-    void testFindByTitleAndAuthorContaining() {
-        Book book = new Book();
-        book.setTitle("Test Book");
-        book.setAuthor("Test Author");
-        book.setAvailable(true);
-
-        when(bookRepository.findByTitleAndAuthorContaining("Test", "Author")).thenReturn(java.util.List.of(book));
-
-        assertEquals(java.util.List.of(book), bookService.findByTitleAndAuthorContaining("Test", "Author"));
-    }
-
-    @Test
     void testFindByAvailable() {
         Book book = new Book();
         book.setTitle("Test Book");

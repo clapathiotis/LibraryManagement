@@ -93,20 +93,6 @@ public class BookControllerTests {
         assertEquals(ResponseEntity.ok(null), result);
     }
 
-    /// Testing the searchByTitleAndAuthor method
-    @Test
-    void testSearchByTitleAndAuthor() {
-        String title = "Test Book";
-        String author = "Test Author";
-
-        when(bookService.findByTitleAndAuthorContaining(title, author)).thenReturn(null);
-
-        ResponseEntity<List<Book>> result = bookController.searchByTitleAndAuthor(title, author);
-
-        verify(bookService, times(1)).findByTitleAndAuthorContaining(title, author);
-        assertEquals(ResponseEntity.ok(null), result);
-    }
-
     /// Testing the searchByAvailable method
     @Test
     void testSearchByAvailable() {

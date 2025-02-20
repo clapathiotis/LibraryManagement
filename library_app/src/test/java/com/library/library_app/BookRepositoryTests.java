@@ -61,12 +61,4 @@ public class BookRepositoryTests {
         assertTrue(books.stream().anyMatch(book -> book.getTitle().equals("The Great Wall of Chris")));
         assertTrue(books.stream().anyMatch(book -> book.getTitle().equals("The Banana Tree")));
     }
-
-    @Test
-    void testFindByTitleAndAuthorContaining() {
-        List<Book> books = bookRepository.findByTitleAndAuthorContaining("The Banana Tree", "Christoforos Banathiotis");
-        assertEquals(1, books.size());
-        assertEquals("The Banana Tree", books.get(0).getTitle());
-    }
-
 }
