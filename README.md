@@ -65,3 +65,7 @@ Through your IDE you can also run the tests/sprinng boot as long as you navigate
 That's it! You should now have the application up and running.
 
 ![image](https://github.com/user-attachments/assets/af0de397-d74e-4e7b-921c-ad120ea12b1c)
+
+Tests run:
+![image](https://github.com/user-attachments/assets/daca1150-4c36-4eda-90e1-71c03c52d4bc)
+![image](https://github.com/user-attachments/assets/bd5eb0cf-0d50-432b-a277-509cd682c509)
