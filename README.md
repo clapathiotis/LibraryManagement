@@ -53,6 +53,15 @@ First run the npm run build command and then the sprint boot command (Tip: You m
 6. **Access the application:**
     Open your browser and navigate to `http://localhost:8080`.
 
+
+7. **Runnning the tests:**
+Make sure you are on the library_app direrctory and run the command
+    ```sh
+    mvn test
+    ```
+
+Through your IDE you can also run the tests/sprinng boot as long as you navigate to the LibraryAppApplication.java for springboot and test folder respectively.
+
 That's it! You should now have the application up and running.
 
 ![image](https://github.com/user-attachments/assets/af0de397-d74e-4e7b-921c-ad120ea12b1c)
