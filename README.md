@@ -44,9 +44,10 @@ To set up and run this project, follow these steps:
     ```
 
 5. **Run the application:**
+First run the npm run build command and then the sprint boot command (Tip: You may use 2 terminals for this in same directory)
     ```sh
-    mvn spring-boot:run
     npm run build
+    mvn spring-boot:run
     ```
 
 6. **Access the application:**

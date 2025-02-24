@@ -1,14 +1,15 @@
 <div class="management-container">
     <div class="flex-container">
+      <!-- Column to add new books - user to input book name and author -->
       <div class="column">
         <h2>Add New Books to the System</h2>
-  
         <h3>Add New Book</h3>
         <input type="text" [(ngModel)]="newBook.title" placeholder="Enter book title" class="wide-input">
         <input type="text" [(ngModel)]="newBook.author" placeholder="Enter author name" class="wide-input">
         <button (click)="addBook()" class="wide-button">Add Book</button>
       </div>
   
+      <!-- Column to Search by whatever category -->
       <div class="column">
         <h2>Search Books</h2>
         <h3 for="searchType">Search by:</h3>
@@ -34,11 +35,12 @@
             <input type="radio" [(ngModel)]="available" [value]="false"> Borrowed
           </label>
         </div>
-  
+        <!-- Buttons for search column,, eacch calling its method -->
         <button (click)="searchBooks()" class="wide-button">Search</button>
         <button (click)="listAllBooks()" class="wide-button">List All Books</button>
       </div>
   
+      <!-- Create a Div for displaying the books curreenntly saved in storage -->
       <div class="column">
         <h2>Books in Storage</h2>
         <ul>
