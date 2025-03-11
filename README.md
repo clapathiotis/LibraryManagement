@@ -6,8 +6,8 @@ To set up and run this project, follow these steps:
 
 1. **Clone the repository into your IDE:**
     ```sh
-    git clone https://github.com/clapathiotis/Crescendo_TA.git
-    cd Crescendo_TA
+    git clone https://github.com/clapathiotis/LibraryManagement.git
+    cd LibraryManagement
     ```
 
 2. **Ensure you have the following installed:**
